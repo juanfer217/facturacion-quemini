@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.layout {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    background: rgb(107, 107, 107);
+    min-height: 100vh;
+}
+
+.productos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 2;
+    min-width: 0;
+    width: 100%;
+}
+
+.productos .cliente {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.productos h1,
+.productos h2,
+.productos h5 {
+    width: 70%;
+    text-align: left;
+    margin: 8px 0;
+    color: white;
+}
+
+.productos h2 {
+    font-size: 1.4rem;
+}
+
+.productos input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid yellow;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.productos section {
+    display: grid;
+    width: 100%;
+    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.pedido-card {
+    background: rgb(107, 107, 107);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px 0;
+    text-align: center;
+    box-shadow: 1px 1px 20px rgb(240, 240, 144);
+    border: 1px solid yellow;
+    min-width: 0;
+}
+
+.pedido-card img {
+    width: 50%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.pedido-card h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 8px 0;
+}
+
+.contador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 6px;
+    color: white;
+}
+
+.contador button {
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    margin: 0 30px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.contador .btn-menos {
+    background: rgb(200, 0, 0);
+    color: white;
+    border: none;
+}
+
+.contador .btn-mas {
+    background: rgb(0, 150, 0);
+    color: white;
+    border: none;
+}
+
+.contador span {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.btn-confirmar {
+    width: 500px;
+    height: 60px;
+    margin: 20px auto 0;
+    display: block;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: yellow;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .layout {
+        width: 100%;
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .productos {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .productos .cliente,
+    .productos h1,
+    .productos h2,
+    .productos h5 {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .productos h1 {
+        font-size: 1.6rem;
+        line-height: 1.1;
+        word-break: break-word;
+    }
+
+    .productos section {
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-bottom: 10px;
+        margin: 15px 0;
+    }
+
+    .pedido-card {
+        margin: 0;
+        padding: 8px;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .pedido-card img {
+        width: 50%;
+        height: 80px;
+        object-fit: cover;
+    }
+
+    .pedido-card h2 {
+        font-size: 0.8rem;
+        margin: 6px 0;
+        word-break: break-word;
+    }
+
+    .contador {
+        gap: 4px;
+    }
+
+    .contador button {
+        width: 60px;
+        height: 30px;
+        margin: 0 10px;
+        font-size: 16px;
+        padding: 0;
+    }
+
+    .contador span {
+        min-width: 16px;
+        font-size: 0.9rem;
+    }
+
+    .btn-confirmar {
+        width: 100%;
+        height: 70px;
+        padding: 14px;
+        font-size: 1rem;
+    }
+}
