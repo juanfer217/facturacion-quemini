@@ -23,6 +23,13 @@ export class OrdenesService {
   private ordenes: Orden[] = [];
   private historial: Orden[] = [];
 
+  private guardar() {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('ordenes', JSON.stringify(this.ordenes));
+      localStorage.setItem('historial', JSON.stringify(this.historial));
+    }
+  }
+
   constructor() {
 
     if (typeof window !== 'undefined') {
@@ -38,18 +45,24 @@ export class OrdenesService {
           estado: o.estado ?? 'activa'
         }));
       }
+      const historial = localStorage.getItem('historial');
+
+      if (historial) {
+        this.historial = JSON.parse(historial);
+      }
     }
   }
 
   agregarOrden(orden: Orden) {
 
-    orden.estado = 'activa';
-    this.ordenes.push(orden);
+    const nuevaOrden: Orden = {
+      ...orden,
+      estado: 'activa'
+    };
 
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('ordenes', JSON.stringify(this.ordenes)
-      );
-    }
+    this.ordenes.push(nuevaOrden);
+
+    this.guardar();
   }
 
   obtenerOrdenes(): Orden[] {
@@ -57,19 +70,23 @@ export class OrdenesService {
   }
 
   getHistorial(): Orden[] {
-    return this.ordenes.filter(o => o.estado === 'entregada');
+    return this.historial;
   }
 
   marcarComoEntregada(id: number) {
 
-    const orden = this.ordenes.find(o => o.id === id);
+    const index = this.ordenes.findIndex(o => o.id === id);
 
-    if (orden) {
+    if (index !== -1) {
+
+      const orden = this.ordenes[index];
+
       orden.estado = 'entregada';
-    }
 
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('ordenes', JSON.stringify(this.ordenes));
+      this.ordenes.splice(index, 1);
+      this.historial.push(orden);
+
+      this.guardar();
     }
   }
 
@@ -87,10 +104,10 @@ export class OrdenesService {
 
   limpiarOrdenes() {
 
-    this.ordenes = [];
+    this.historial = [];
 
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('ordenes');
+      localStorage.removeItem('Historial');
     }
   }
 }

@@ -18,16 +18,6 @@ export class Ordenes {
     this.ordenes = this.ordenesService.obtenerOrdenes();
   }
 
-  limpiarTodo() {
-
-    if (confirm('¿Seguro que deseas borrar todas las órdenes?')) {
-
-      this.ordenesService.limpiarOrdenes();
-      this.ordenes = [];
-
-    }
-  }
-
   entregar(id: number) {
     this.ordenesService.marcarComoEntregada(id);
   }

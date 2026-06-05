@@ -1,6 +1,6 @@
 <div class="historial-container">
 
-    <h1>HISTORIAL DEL DÍA</h1>
+    <h1>DIARIO</h1>
 
     <div class="ventas-grid">
 
@@ -22,6 +22,10 @@
 
     </div>
 
+    <div class="total-dia">
+        Total del día:
+    </div>
+
     <div class="acciones-finales">
 
         <button class="btn-cerrar-dia">
@@ -32,7 +36,7 @@
             Imprimir Dia
         </button>
 
-        <button class="btn-borrar">
+        <button class="btn-borrar" (click)="limpiarTodo()">
             Borrar Historial
         </button>
 

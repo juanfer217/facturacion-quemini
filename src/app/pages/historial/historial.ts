@@ -12,7 +12,7 @@ export class Historial implements OnInit {
 
   historial: Orden[] = [];
 
-  constructor(private ordenesService: OrdenesService) {}
+  constructor(private ordenesService: OrdenesService) { }
 
   ngOnInit(): void {
     this.cargarHistorial();
@@ -23,6 +23,17 @@ export class Historial implements OnInit {
   }
 
   ngDoCheck() {
-    this.cargarHistorial(); // 👈 esto lo mantiene actualizado
+    this.cargarHistorial();
   }
+
+  limpiarTodo() {
+
+    if (confirm('¿Seguro que deseas borrar todas las órdenes?')) {
+
+      this.ordenesService.limpiarOrdenes();
+      this.historial = [];
+
+    }
+  }
+
 }
