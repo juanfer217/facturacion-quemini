@@ -27,4 +27,8 @@ export class Ordenes {
 
     }
   }
+
+  entregar(id: number) {
+    this.ordenesService.marcarComoEntregada(id);
+  }
 }

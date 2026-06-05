@@ -57,7 +57,7 @@ export class Home {
 
   confirmarPedido() {
 
-    const orden = {
+    const orden: any = {
       id: Date.now(),
       cliente: this.cliente,
 

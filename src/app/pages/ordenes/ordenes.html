@@ -67,7 +67,7 @@
                     <strong>x{{ orden.gaseosa500 }}</strong>
                 </div>
                 <p class="total">
-                    Total: ${{ orden.total }}
+                    Total: ${{ orden.total?.toLocaleString('es-CO') }}
                 </p>
 
             </div>
@@ -82,7 +82,7 @@
                     🖨️ Imprimir
                 </button>
 
-                <button class="btn-entregado">
+                <button class="btn-entregado" (click)="entregar(orden.id)">
                     Entregado
                 </button>
 

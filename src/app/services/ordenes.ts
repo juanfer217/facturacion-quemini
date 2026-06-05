@@ -12,6 +12,7 @@ export interface Orden {
   gaseosa500: number;
   total: number;
   fecha: Date;
+  estado: 'activa' | 'entregada';
 }
 
 @Injectable({
@@ -20,6 +21,7 @@ export interface Orden {
 export class OrdenesService {
 
   private ordenes: Orden[] = [];
+  private historial: Orden[] = [];
 
   constructor() {
 
@@ -28,26 +30,47 @@ export class OrdenesService {
       const datos = localStorage.getItem('ordenes');
 
       if (datos) {
-        this.ordenes = JSON.parse(datos);
-      }
+        const parsed = JSON.parse(datos);
 
+        this.ordenes = parsed.map((o: any) => ({
+          ...o,
+          fecha: new Date(o.fecha),
+          estado: o.estado ?? 'activa'
+        }));
+      }
     }
   }
 
   agregarOrden(orden: Orden) {
 
+    orden.estado = 'activa';
     this.ordenes.push(orden);
 
     if (typeof window !== 'undefined') {
-      localStorage.setItem(
-        'ordenes',
-        JSON.stringify(this.ordenes)
+      localStorage.setItem('ordenes', JSON.stringify(this.ordenes)
       );
     }
   }
 
   obtenerOrdenes(): Orden[] {
     return this.ordenes;
+  }
+
+  getHistorial(): Orden[] {
+    return this.ordenes.filter(o => o.estado === 'entregada');
+  }
+
+  marcarComoEntregada(id: number) {
+
+    const orden = this.ordenes.find(o => o.id === id);
+
+    if (orden) {
+      orden.estado = 'entregada';
+    }
+
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('ordenes', JSON.stringify(this.ordenes));
+    }
   }
 
   eliminarOrden(id: number) {
@@ -57,9 +80,7 @@ export class OrdenesService {
     );
 
     if (typeof window !== 'undefined') {
-      localStorage.setItem(
-        'ordenes',
-        JSON.stringify(this.ordenes)
+      localStorage.setItem('ordenes', JSON.stringify(this.ordenes)
       );
     }
   }

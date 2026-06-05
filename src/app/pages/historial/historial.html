@@ -1,1 +1,41 @@
-<p>historial works!</p>
+<div class="historial-container">
+
+    <h1>HISTORIAL DEL DÍA</h1>
+
+    <div class="ventas-grid">
+
+        <div class="venta-card" *ngFor="let venta of historial; let i = index">
+
+            <div class="venta-info">
+                <h2>Venta #{{ i + 1 }}</h2>
+                <h3>{{ venta.cliente }}</h3>
+                <p>Total: ${{ venta.total }}</p>
+            </div>
+
+            <div class="venta-acciones">
+                <button class="btn-detalles">
+                    Ver Detalles
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="acciones-finales">
+
+        <button class="btn-cerrar-dia">
+            Cerrar Día
+        </button>
+
+        <button class="btn-imprimir">
+            Imprimir Dia
+        </button>
+
+        <button class="btn-borrar">
+            Borrar Historial
+        </button>
+
+    </div>
+
+</div>
