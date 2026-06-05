@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 export class Historial implements OnInit {
 
   historial: Orden[] = [];
+  selectedVentaId: number | null = null;
 
   constructor(private ordenesService: OrdenesService) { }
 
@@ -20,6 +21,16 @@ export class Historial implements OnInit {
 
   cargarHistorial() {
     this.historial = this.ordenesService.getHistorial();
+  }
+
+  toggleDetalles(id: number) {
+
+    if (this.selectedVentaId === id) {
+      this.selectedVentaId = null;
+    } else {
+      this.selectedVentaId = id;
+    }
+
   }
 
   ngDoCheck() {

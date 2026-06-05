@@ -6,16 +6,63 @@
 
         <div class="venta-card" *ngFor="let venta of historial; let i = index">
 
-            <div class="venta-info">
-                <h2>Venta #{{ i + 1 }}</h2>
-                <h3>{{ venta.cliente }}</h3>
-                <p>Total: ${{ venta.total }}</p>
+            <div class="venta-header">
+
+                <div class="venta-info">
+                    <h2>Venta #{{ i + 1 }}</h2>
+                    <h3>{{ venta.cliente }}</h3>
+                    <p>Total: ${{ venta.total }}</p>
+                </div>
+
+                <button class="btn-detalles" (click)="toggleDetalles(venta.id)">
+                    <span>
+                        {{ selectedVentaId === venta.id ? 'Ocultar' : 'Detalles' }}
+                    </span>
+
+                    <span class="flecha" [class.flecha-abierta]="selectedVentaId === venta.id">
+                        ▼
+                    </span>
+                </button>
+
             </div>
 
-            <div class="venta-acciones">
-                <button class="btn-detalles">
-                    Ver Detalles
-                </button>
+            <div class="detalles" [class.detalles-abierto]="selectedVentaId === venta.id">
+
+                <div *ngIf="venta.miniHamburguesas > 0" class="detalle-item">
+                    <span>🍔 Mini Hamburguesas</span>
+                    <strong>x{{ venta.miniHamburguesas }}</strong>
+                </div>
+
+                <div *ngIf="venta.miniPerros > 0" class="detalle-item">
+                    <span>🌭 Mini Perros</span>
+                    <strong>x{{ venta.miniPerros }}</strong>
+                </div>
+
+                <div *ngIf="venta.miniArepas > 0" class="detalle-item">
+                    <span>🫓 Mini Arepas</span>
+                    <strong>x{{ venta.miniArepas }}</strong>
+                </div>
+
+                <div *ngIf="venta.papasPequenas > 0" class="detalle-item">
+                    <span>🍟 Papas Pequeñas</span>
+                    <strong>x{{ venta.papasPequenas }}</strong>
+                </div>
+
+                <div *ngIf="venta.papasGrandes > 0" class="detalle-item">
+                    <span>🍟 Papas Grandes</span>
+                    <strong>x{{ venta.papasGrandes }}</strong>
+                </div>
+
+                <div *ngIf="venta.gaseosa250 > 0" class="detalle-item">
+                    <span>🥤 Gaseosa 250 ml</span>
+                    <strong>x{{ venta.gaseosa250 }}</strong>
+                </div>
+
+                <div *ngIf="venta.gaseosa500 > 0" class="detalle-item">
+                    <span>🥤 Gaseosa 500 ml</span>
+                    <strong>x{{ venta.gaseosa500 }}</strong>
+                </div>
+
             </div>
 
         </div>
@@ -33,7 +80,7 @@
         </button>
 
         <button class="btn-imprimir">
-            Imprimir Dia
+            Imprimir Día
         </button>
 
         <button class="btn-borrar" (click)="limpiarTodo()">
