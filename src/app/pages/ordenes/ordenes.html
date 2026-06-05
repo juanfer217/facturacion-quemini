@@ -1,1 +1,19 @@
-<p>ordenes works!</p>
+<h1>ÓRDENES REGISTRADAS</h1>
+
+<div *ngFor="let orden of ordenes">
+
+    <h3>{{ orden.cliente }}</h3>
+
+    <p>Mini Hamburguesas: {{ orden.miniHamburguesas }}</p>
+    <p>Mini Perros: {{ orden.miniPerros }}</p>
+    <p>Mini Arepas: {{ orden.miniArepas }}</p>
+
+    <p>Papas Pequeñas: {{ orden.papasPequenas }}</p>
+    <p>Papas Grandes: {{ orden.papasGrandes }}</p>
+
+    <p>Gaseosa 250ml: {{ orden.gaseosa250 }}</p>
+    <p>Gaseosa 500ml: {{ orden.gaseosa500 }}</p>
+
+    <hr>
+
+</div>

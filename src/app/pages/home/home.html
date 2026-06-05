@@ -4,7 +4,7 @@
 
         <div class="cliente">
             <h5>Nombre del Cliente</h5>
-            <input type="text" placeholder="Nombre del Cliente">
+            <input type="text" placeholder="Nombre del Cliente" [(ngModel)]="cliente">
         </div>
 
         <h1>SELECCIONA TU PEDIDO</h1>
@@ -15,9 +15,9 @@
                 <img src="/img/burger.png">
                 <h2>Mini Hamburguesas</h2>
                 <div class="contador">
-                    <button type="button" class="btn-menos">-</button>
-                    <span>0</span>
-                    <button type="button" class="btn-mas">+</button>
+                    <button type="button" class="btn-menos" (click)="disminuir('miniHamburguesas')">-</button>
+                    <span>{{ miniHamburguesas }}</span>
+                    <button type="button" class="btn-mas" (click)="aumentar('miniHamburguesas')">+</button>
                 </div>
             </div>
 
@@ -25,9 +25,9 @@
                 <img src="/img/perro.png">
                 <h2>Mini Perros</h2>
                 <div class="contador">
-                    <button type="button" class="btn-menos">-</button>
-                    <span>0</span>
-                    <button type="button" class="btn-mas">+</button>
+                    <button type="button" class="btn-menos" (click)="disminuir('miniPerros')">-</button>
+                    <span>{{ miniPerros }}</span>
+                    <button type="button" class="btn-mas" (click)="aumentar('miniPerros')">+</button>
                 </div>
             </div>
 
@@ -35,9 +35,9 @@
                 <img src="/img/arepa.png">
                 <h2>Mini Arepas</h2>
                 <div class="contador">
-                    <button type="button" class="btn-menos">-</button>
-                    <span>0</span>
-                    <button type="button" class="btn-mas">+</button>
+                    <button type="button" class="btn-menos" (click)="disminuir('miniArepas')">-</button>
+                    <span>{{ miniArepas }}</span>
+                    <button type="button" class="btn-mas" (click)="aumentar('miniArepas')">+</button>
                 </div>
             </div>
 
@@ -49,18 +49,18 @@
             <div class="pedido-card">
                 <h2>Papas Pequeñas</h2>
                 <div class="contador">
-                    <button type="button" class="btn-menos">-</button>
-                    <span>0</span>
-                    <button type="button" class="btn-mas">+</button>
+                    <button type="button" class="btn-menos" (click)="disminuir('papasPequenas')">-</button>
+                    <span>{{ papasPequenas }}</span>
+                    <button type="button" class="btn-mas" (click)="aumentar('papasPequenas')">+</button>
                 </div>
             </div>
 
             <div class="pedido-card">
                 <h2>Papas Grandes</h2>
                 <div class="contador">
-                    <button type="button" class="btn-menos">-</button>
-                    <span>0</span>
-                    <button type="button" class="btn-mas">+</button>
+                    <button type="button" class="btn-menos" (click)="disminuir('papasGrandes')">-</button>
+                    <span>{{ papasGrandes }}</span>
+                    <button type="button" class="btn-mas" (click)="aumentar('papasGrandes')">+</button>
                 </div>
             </div>
 
@@ -72,25 +72,25 @@
             <div class="pedido-card">
                 <h2>Gaseosa 250ml</h2>
                 <div class="contador">
-                    <button type="button" class="btn-menos">-</button>
-                    <span>0</span>
-                    <button type="button" class="btn-mas">+</button>
+                    <button type="button" class="btn-menos" (click)="disminuir('gaseosa250')">-</button>
+                    <span>{{ gaseosa250 }}</span>
+                    <button type="button" class="btn-mas" (click)="aumentar('gaseosa250')">+</button>
                 </div>
             </div>
 
             <div class="pedido-card">
                 <h2>Gaseosa 500ml</h2>
                 <div class="contador">
-                    <button type="button" class="btn-menos">-</button>
-                    <span>0</span>
-                    <button type="button" class="btn-mas">+</button>
+                    <button type="button" class="btn-menos" (click)="disminuir('gaseosa500')">-</button>
+                    <span>{{ gaseosa500 }}</span>
+                    <button type="button" class="btn-mas" (click)="aumentar('gaseosa500')">+</button>
                 </div>
             </div>
 
         </section>
 
         <div>
-            <button class="btn-confirmar" hreft="/ordenes">CONFIRMAR PEDIDO</button>
+            <button class="btn-confirmar" (click)="confirmarPedido()">CONFIRMAR PEDIDO</button>
         </div>
 
     </div>
