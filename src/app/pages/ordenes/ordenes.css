@@ -9,13 +9,13 @@ body {
 
 .ordenes-page {
     min-height: 100vh;
-    padding: 30px;
+    padding: 80px 15px 40px 15px;
     background:
         linear-gradient(
             rgba(45,45,45,.94),
             rgba(45,45,45,.94)
         ),
-        url('/assets/img/logo.png');
+        url('/img/logo.png');
 
     background-size: cover;
     background-position: center;
@@ -54,7 +54,7 @@ body {
 }
 
 .orden-card {
-    background: rgba(70,70,70,.92);
+    background: #2d2d2d;
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 20px;

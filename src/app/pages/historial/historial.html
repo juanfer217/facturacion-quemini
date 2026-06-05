@@ -29,17 +29,17 @@
             <div class="detalles" [class.detalles-abierto]="selectedVentaId === venta.id">
 
                 <div *ngIf="venta.miniHamburguesas > 0" class="detalle-item">
-                    <span>🍔 Mini Hamburguesas</span>
+                    <span>🍔 Mini Hamburguesa</span>
                     <strong>x{{ venta.miniHamburguesas }}</strong>
                 </div>
 
                 <div *ngIf="venta.miniPerros > 0" class="detalle-item">
-                    <span>🌭 Mini Perros</span>
+                    <span>🌭 Mini Perro</span>
                     <strong>x{{ venta.miniPerros }}</strong>
                 </div>
 
                 <div *ngIf="venta.miniArepas > 0" class="detalle-item">
-                    <span>🫓 Mini Arepas</span>
+                    <span>🫓 Mini Arepa</span>
                     <strong>x{{ venta.miniArepas }}</strong>
                 </div>
 
@@ -70,12 +70,12 @@
     </div>
 
     <div class="total-dia">
-        Total del día:
+        Total del día: ${{ totalDia.toLocaleString('es-CO') }}
     </div>
 
     <div class="acciones-finales">
 
-        <button class="btn-cerrar-dia">
+        <button class="btn-cerrar-dia" (click)="cerrarDia()">
             Cerrar Día
         </button>
 

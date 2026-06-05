@@ -12,6 +12,7 @@ export class Historial implements OnInit {
 
   historial: Orden[] = [];
   selectedVentaId: number | null = null;
+  totalDia: number = 0;
 
   constructor(private ordenesService: OrdenesService) { }
 
@@ -47,4 +48,12 @@ export class Historial implements OnInit {
     }
   }
 
+  cerrarDia() {
+
+    this.totalDia = this.historial.reduce(
+      (total, venta) => total + Number(venta.total),
+      0
+    );
+
+  }
 }
