@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.ordenes-page {
+    min-height: 100vh;
+    padding: 30px;
+    background:
+        linear-gradient(
+            rgba(45,45,45,.94),
+            rgba(45,45,45,.94)
+        ),
+        url('/assets/img/logo.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header-ordenes {
+    margin-bottom: 30px;
+}
+
+.header-ordenes h1 {
+    color: #ffd000;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.header-ordenes p {
+    color: #d1d1d1;
+    font-size: 1rem;
+}
+
+.sin-ordenes {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    border-radius: 20px;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,208,0,.2);
+    color: white;
+}
+
+.ordenes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 20px;
+}
+
+.orden-card {
+    background: rgba(70,70,70,.92);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid rgba(255,208,0,.3);
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.3),
+        0 0 15px rgba(255,208,0,.15);
+
+    transition: .25s;
+}
+
+.orden-card:hover {
+    transform: translateY(-4px);
+}
+
+.orden-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.orden-top h2 {
+    color: white;
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.estado {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(255,208,0,.15);
+    border: 1px solid rgba(255,208,0,.3);
+    color: #ffd000;
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+.orden-id {
+    color: #ffd000;
+    font-weight: bold;
+    font-size: .9rem;
+}
+
+.productos-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.producto-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,.05);
+    color: white;
+}
+
+.producto-item strong {
+    color: #ffd000;
+}
+
+.acciones {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.acciones button {
+    flex: 1;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.acciones button:hover {
+    transform: scale(1.03);
+}
+
+.btn-editar {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-print {
+    background: #9333ea;
+    color: white;
+}
+
+.btn-entregado {
+    background: #16a34a;
+    color: white;
+}
+
+.total {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffd000;
+}
+
+@media (max-width: 768px) {
+
+    .ordenes-page {
+        padding: 15px;
+    }
+
+    .header-ordenes h1 {
+        font-size: 1.8rem;
+    }
+
+    .ordenes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .acciones {
+        flex-direction: column;
+    }
+
+}

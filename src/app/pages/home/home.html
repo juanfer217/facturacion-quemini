@@ -13,7 +13,7 @@
 
             <div class="pedido-card">
                 <img src="/img/burger.png">
-                <h2>Mini Hamburguesas</h2>
+                <h2>Mini Hamburguesa</h2>
                 <div class="contador">
                     <button type="button" class="btn-menos" (click)="disminuir('miniHamburguesas')">-</button>
                     <span>{{ miniHamburguesas }}</span>
@@ -23,7 +23,7 @@
 
             <div class="pedido-card">
                 <img src="/img/perro.png">
-                <h2>Mini Perros</h2>
+                <h2>Mini Perro</h2>
                 <div class="contador">
                     <button type="button" class="btn-menos" (click)="disminuir('miniPerros')">-</button>
                     <span>{{ miniPerros }}</span>
@@ -33,7 +33,7 @@
 
             <div class="pedido-card">
                 <img src="/img/arepa.png">
-                <h2>Mini Arepas</h2>
+                <h2>Mini Arepa</h2>
                 <div class="contador">
                     <button type="button" class="btn-menos" (click)="disminuir('miniArepas')">-</button>
                     <span>{{ miniArepas }}</span>
@@ -88,6 +88,10 @@
             </div>
 
         </section>
+
+        <div class="total-pedido">
+            TOTAL: ${{ total.toLocaleString('es-CO') }}
+        </div>
 
         <div>
             <button class="btn-confirmar" (click)="confirmarPedido()">CONFIRMAR PEDIDO</button>

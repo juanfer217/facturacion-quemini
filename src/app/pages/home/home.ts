@@ -23,6 +23,16 @@ export class Home {
   gaseosa250 = 0;
   gaseosa500 = 0;
 
+  precioHamburguesa = 6000;
+  precioPerro = 6000;
+  precioArepa = 6000;
+
+  precioPapasPequenas = 3000;
+  precioPapasGrandes = 5000;
+
+  precioGaseosa250 = 2000;
+  precioGaseosa500 = 4000;
+
   aumentar(campo: keyof Home) {
     (this[campo] as number)++;
   }
@@ -31,6 +41,18 @@ export class Home {
     if ((this[campo] as number) > 0) {
       (this[campo] as number)--;
     }
+  }
+
+  get total(): number {
+    return (
+      this.miniHamburguesas * this.precioHamburguesa +
+      this.miniPerros * this.precioPerro +
+      this.miniArepas * this.precioArepa +
+      this.papasPequenas * this.precioPapasPequenas +
+      this.papasGrandes * this.precioPapasGrandes +
+      this.gaseosa250 * this.precioGaseosa250 +
+      this.gaseosa500 * this.precioGaseosa500
+    );
   }
 
   confirmarPedido() {
@@ -48,6 +70,8 @@ export class Home {
 
       gaseosa250: this.gaseosa250,
       gaseosa500: this.gaseosa500,
+
+      total: this.total,
 
       fecha: new Date()
     };

@@ -4,8 +4,7 @@
   justify-content: space-between;
   padding: 0 28px;
   height: 56px;
-  background: rgb(168, 168, 168);
-  border-bottom: 1px solid var(--qm-border);
+  background: rgb(104, 104, 104);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -30,13 +29,14 @@
   font-weight: 600;
   letter-spacing: 1.2px;
   text-transform: uppercase;
-  color: black;
+  color: white;
   text-decoration: none;
   padding-bottom: 2px;
   border-bottom: 2px solid transparent;
   transition: color 0.2s, border-color 0.2s;
 
   &:hover {
+    border-bottom: 2px solid yellow;
     color: yellow;
   }
 

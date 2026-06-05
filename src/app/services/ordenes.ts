@@ -10,6 +10,7 @@ export interface Orden {
   papasGrandes: number;
   gaseosa250: number;
   gaseosa500: number;
+  total: number;
   fecha: Date;
 }
 

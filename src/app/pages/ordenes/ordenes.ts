@@ -12,9 +12,19 @@ export class Ordenes {
 
   ordenes: Orden[] = [];
 
-  constructor(private ordenesService: OrdenesService) {}
+  constructor(private ordenesService: OrdenesService) { }
 
   ngOnInit() {
     this.ordenes = this.ordenesService.obtenerOrdenes();
+  }
+
+  limpiarTodo() {
+
+    if (confirm('¿Seguro que deseas borrar todas las órdenes?')) {
+
+      this.ordenesService.limpiarOrdenes();
+      this.ordenes = [];
+
+    }
   }
 }
