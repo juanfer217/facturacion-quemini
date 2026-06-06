@@ -22,6 +22,7 @@ export class OrdenesService {
 
   private ordenes: Orden[] = [];
   private historial: Orden[] = [];
+  private ordenEditando: Orden | null = null;
 
   private guardar() {
     if (typeof window !== 'undefined') {
@@ -88,6 +89,14 @@ export class OrdenesService {
 
       this.guardar();
     }
+  }
+
+  setOrdenEditando(orden: Orden) {
+    this.ordenEditando = orden;
+  }
+
+  getOrdenEditando(): Orden | null {
+    return this.ordenEditando;
   }
 
   eliminarOrden(id: number) {

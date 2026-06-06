@@ -55,6 +55,7 @@ body {
 }
 
 .orden-card {
+    position: relative;
     background: #2d2d2d;
     backdrop-filter: blur(10px);
     border-radius: 20px;
@@ -70,6 +71,7 @@ body {
 .orden-card:hover {
     transform: translateY(-4px);
 }
+
 
 .orden-top {
     display: flex;
@@ -123,7 +125,8 @@ body {
 }
 
 .acciones {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
     margin-top: 20px;
 }
@@ -142,6 +145,23 @@ body {
     transform: scale(1.03);
 }
 
+.btn-editar,
+.btn-print,
+.btn-entregado {
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-editar:hover,
+.btn-print:hover,
+.btn-entregado:hover {
+    transform: scale(1.03);
+}
+
 .btn-editar {
     background: #2563eb;
     color: white;
@@ -155,6 +175,36 @@ body {
 .btn-entregado {
     background: #16a34a;
     color: white;
+    grid-column: span 2;
+}
+
+.btn-eliminar {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(220,38,38,.15);
+    color: #ef4444;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.btn-eliminar:hover {
+    background: #dc2626;
+    color: white;
+
+    transform: scale(1.1);
 }
 
 .total {
@@ -168,11 +218,11 @@ body {
 @media (max-width: 768px) {
 
     .ordenes-page {
-        padding: 15px;
+        padding: 80px 15px 20px 15px;
     }
 
     .header-ordenes h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .ordenes-grid {

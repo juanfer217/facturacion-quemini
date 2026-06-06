@@ -4,6 +4,10 @@
 
     <div class="ventas-grid">
 
+        <div *ngIf="historial.length === 0" class="sin-historial">
+            <h2>No hay órdenes registradas</h2>
+        </div>
+
         <div class="venta-card" *ngFor="let venta of historial; let i = index">
 
             <div class="venta-header">

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { OrdenesService } from '../../services/ordenes';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { OrdenesService } from '../../services/ordenes';
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home {
+export class Home implements OnInit {
 
   cliente = '';
 
@@ -32,6 +33,7 @@ export class Home {
 
   precioGaseosa250 = 2000;
   precioGaseosa500 = 4000;
+  editandoId: number | null = null;
 
   aumentar(campo: keyof Home) {
     (this[campo] as number)++;
@@ -56,6 +58,12 @@ export class Home {
   }
 
   confirmarPedido() {
+
+    if (this.editandoId) {
+
+      this.ordenesService.eliminarOrden(this.editandoId);
+
+    }
 
     const orden: any = {
       id: Date.now(),
@@ -85,4 +93,26 @@ export class Home {
     private ordenesService: OrdenesService,
     private router: Router
   ) { }
+
+  ngOnInit() {
+
+    const orden = this.ordenesService.getOrdenEditando();
+
+    if (orden) {
+
+      this.editandoId = orden.id;
+
+      this.cliente = orden.cliente;
+
+      this.miniHamburguesas = orden.miniHamburguesas;
+      this.miniPerros = orden.miniPerros;
+      this.miniArepas = orden.miniArepas;
+
+      this.papasPequenas = orden.papasPequenas;
+      this.papasGrandes = orden.papasGrandes;
+
+      this.gaseosa250 = orden.gaseosa250;
+      this.gaseosa500 = orden.gaseosa500;
+    }
+  }
 }

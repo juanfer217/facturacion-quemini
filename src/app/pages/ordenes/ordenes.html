@@ -12,6 +12,10 @@
 
         <div class="orden-card" *ngFor="let orden of ordenes">
 
+            <button class="btn-eliminar" (click)="eliminarOrden(orden.id)">
+                ✕
+            </button>
+
             <div class="orden-top">
 
                 <div>
@@ -67,7 +71,7 @@
 
             <div class="acciones">
 
-                <button class="btn-editar">
+                <button class="btn-editar" (click)="editar(orden)">
                     ✏️ Editar
                 </button>
 
