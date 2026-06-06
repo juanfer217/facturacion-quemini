@@ -25,10 +25,10 @@ export class Home {
 
   precioHamburguesa = 6000;
   precioPerro = 6000;
-  precioArepa = 6000;
+  precioArepa = 7000;
 
-  precioPapasPequenas = 3000;
-  precioPapasGrandes = 5000;
+  precioPapasPequenas = 2000;
+  precioPapasGrandes = 4000;
 
   precioGaseosa250 = 2000;
   precioGaseosa500 = 4000;
