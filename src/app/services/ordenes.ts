@@ -150,4 +150,8 @@ export class OrdenesService {
       localStorage.removeItem('Historial');
     }
   }
+
+  limpiarOrdenEditando() {
+    this.ordenEditando = null;
+  }
 }

@@ -98,6 +98,10 @@ export class Home implements OnInit {
 
     }
 
+    this.ordenesService.limpiarOrdenEditando();
+    this.editandoId = null;
+    this.numeroOrden = 0;
+
     this.router.navigate(['/ordenes']);
   }
 
