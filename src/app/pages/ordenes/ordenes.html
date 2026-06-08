@@ -1,7 +1,7 @@
 <div class="ordenes-page">
 
     <div class="header-ordenes">
-        <h1>ORDENES  ACTIVAS</h1>
+        <h1>ORDENES ACTIVAS</h1>
     </div>
 
     <div *ngIf="ordenes.length === 0" class="sin-ordenes">
@@ -25,6 +25,10 @@
                     </span>
                 </div>
 
+            </div>
+
+            <div class="orden-id">
+                Pedido #{{ orden.numeroOrden }}
             </div>
 
             <div class="productos-lista">

@@ -13,6 +13,7 @@ import { OnInit } from '@angular/core';
 export class Home implements OnInit {
 
   cliente = '';
+  numeroOrden = 0;
 
   miniHamburguesas = 0;
   miniPerros = 0;
@@ -73,6 +74,7 @@ export class Home implements OnInit {
 
     const orden: any = {
       id: Date.now(),
+      numeroOrden: 0,
       cliente: this.cliente,
 
       miniHamburguesas: this.miniHamburguesas,

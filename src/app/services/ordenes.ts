@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 export interface Orden {
   id: number;
+  numeroOrden: number;
   cliente: string;
   miniHamburguesas: number;
   miniPerros: number;
@@ -25,6 +26,7 @@ export class OrdenesService {
   private ordenes: Orden[] = [];
   private historial: Orden[] = [];
   private ordenEditando: Orden | null = null;
+  private contadorOrdenes = 1;
 
   private guardar() {
     if (typeof window !== 'undefined') {
@@ -53,6 +55,11 @@ export class OrdenesService {
       if (historial) {
         this.historial = JSON.parse(historial);
       }
+      const contador = localStorage.getItem('contadorOrdenes');
+
+      if (contador) {
+        this.contadorOrdenes = Number(contador);
+      }
     }
   }
 
@@ -60,8 +67,12 @@ export class OrdenesService {
 
     const nuevaOrden: Orden = {
       ...orden,
+      numeroOrden: this.contadorOrdenes,
       estado: 'activa'
     };
+
+    this.contadorOrdenes++;
+    localStorage.setItem('contadorOrdenes', this.contadorOrdenes.toString());
 
     this.ordenes.push(nuevaOrden);
 
@@ -116,6 +127,9 @@ export class OrdenesService {
   limpiarOrdenes() {
 
     this.historial = [];
+    this.contadorOrdenes = 1;
+
+    localStorage.removeItem('contadorOrdenes');
 
     if (typeof window !== 'undefined') {
       localStorage.removeItem('Historial');
