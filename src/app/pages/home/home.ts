@@ -66,15 +66,9 @@ export class Home implements OnInit {
 
   confirmarPedido() {
 
-    if (this.editandoId) {
-
-      this.ordenesService.eliminarOrden(this.editandoId);
-
-    }
-
     const orden: any = {
-      id: Date.now(),
-      numeroOrden: 0,
+      id: this.editandoId ?? Date.now(),
+      numeroOrden: this.numeroOrden,
       cliente: this.cliente,
 
       miniHamburguesas: this.miniHamburguesas,
@@ -94,7 +88,15 @@ export class Home implements OnInit {
       fecha: new Date()
     };
 
-    this.ordenesService.agregarOrden(orden);
+    if (this.editandoId) {
+
+      this.ordenesService.actualizarOrden(orden);
+
+    } else {
+
+      this.ordenesService.agregarOrden(orden);
+
+    }
 
     this.router.navigate(['/ordenes']);
   }
@@ -111,6 +113,7 @@ export class Home implements OnInit {
     if (orden) {
 
       this.editandoId = orden.id;
+      this.numeroOrden = orden.numeroOrden;
 
       this.cliente = orden.cliente;
 

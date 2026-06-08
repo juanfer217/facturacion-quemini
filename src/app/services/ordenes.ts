@@ -79,6 +79,21 @@ export class OrdenesService {
     this.guardar();
   }
 
+  actualizarOrden(ordenActualizada: Orden) {
+
+    const index = this.ordenes.findIndex(
+      o => o.id === ordenActualizada.id
+    );
+
+    if (index !== -1) {
+
+      this.ordenes[index] = ordenActualizada;
+
+      this.guardar();
+
+    }
+  }
+
   obtenerOrdenes(): Orden[] {
     return this.ordenes;
   }
