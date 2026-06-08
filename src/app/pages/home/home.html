@@ -64,6 +64,15 @@
                 </div>
             </div>
 
+            <div class="pedido-card">
+                <h2>Papas Combo</h2>
+                <div class="contador">
+                    <button type="button" class="btn-menos" (click)="disminuir('papasCombo')">-</button>
+                    <span>{{ papasCombo }}</span>
+                    <button type="button" class="btn-mas" (click)="aumentar('papasCombo')">+</button>
+                </div>
+            </div>
+
         </section>
 
         <h2>BEBIDAS</h2>
@@ -84,6 +93,15 @@
                     <button type="button" class="btn-menos" (click)="disminuir('gaseosa500')">-</button>
                     <span>{{ gaseosa500 }}</span>
                     <button type="button" class="btn-mas" (click)="aumentar('gaseosa500')">+</button>
+                </div>
+            </div>
+
+            <div class="pedido-card">
+                <h2>Agua</h2>
+                <div class="contador">
+                    <button type="button" class="btn-menos" (click)="disminuir('agua')">-</button>
+                    <span>{{ agua }}</span>
+                    <button type="button" class="btn-mas" (click)="aumentar('agua')">+</button>
                 </div>
             </div>
 

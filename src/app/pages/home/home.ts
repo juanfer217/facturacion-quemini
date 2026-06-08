@@ -20,19 +20,23 @@ export class Home implements OnInit {
 
   papasPequenas = 0;
   papasGrandes = 0;
+  papasCombo = 0;
 
   gaseosa250 = 0;
   gaseosa500 = 0;
+  agua = 0;
 
   precioHamburguesa = 6000;
   precioPerro = 6000;
   precioArepa = 7000;
 
   precioPapasPequenas = 2000;
-  precioPapasGrandes = 4000;
+  precioPapasGrandes = 5000;
+  precioPapasCombo = 4000;
 
   precioGaseosa250 = 2000;
   precioGaseosa500 = 4000;
+  precioAgua = 1000;
   editandoId: number | null = null;
 
   aumentar(campo: keyof Home) {
@@ -52,8 +56,10 @@ export class Home implements OnInit {
       this.miniArepas * this.precioArepa +
       this.papasPequenas * this.precioPapasPequenas +
       this.papasGrandes * this.precioPapasGrandes +
+      this.papasCombo * this.precioPapasCombo +
       this.gaseosa250 * this.precioGaseosa250 +
-      this.gaseosa500 * this.precioGaseosa500
+      this.gaseosa500 * this.precioGaseosa500 +
+      this.agua * this.precioAgua
     );
   }
 
@@ -75,9 +81,11 @@ export class Home implements OnInit {
 
       papasPequenas: this.papasPequenas,
       papasGrandes: this.papasGrandes,
+      papasCombo: this.papasCombo,
 
       gaseosa250: this.gaseosa250,
       gaseosa500: this.gaseosa500,
+      agua: this.agua,
 
       total: this.total,
 

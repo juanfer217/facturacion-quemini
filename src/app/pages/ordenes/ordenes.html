@@ -1,7 +1,7 @@
 <div class="ordenes-page">
 
     <div class="header-ordenes">
-        <h1>ORDENES REGISTRADAS</h1>
+        <h1>ORDENES  ACTIVAS</h1>
     </div>
 
     <div *ngIf="ordenes.length === 0" class="sin-ordenes">
@@ -30,17 +30,17 @@
             <div class="productos-lista">
 
                 <div *ngIf="orden.miniHamburguesas > 0" class="producto-item">
-                    <span>🍔 Mini Hamburguesas</span>
+                    <span>🍔 Mini Hamburguesa</span>
                     <strong>x{{ orden.miniHamburguesas }}</strong>
                 </div>
 
                 <div *ngIf="orden.miniPerros > 0" class="producto-item">
-                    <span>🌭 Mini Perros</span>
+                    <span>🌭 Mini Perro</span>
                     <strong>x{{ orden.miniPerros }}</strong>
                 </div>
 
                 <div *ngIf="orden.miniArepas > 0" class="producto-item">
-                    <span>🫓 Mini Arepas</span>
+                    <span>🫓 Mini Arepa</span>
                     <strong>x{{ orden.miniArepas }}</strong>
                 </div>
 
@@ -54,6 +54,11 @@
                     <strong>x{{ orden.papasGrandes }}</strong>
                 </div>
 
+                <div *ngIf="orden.papasCombo > 0" class="producto-item">
+                    <span>🍟 Papas Combo</span>
+                    <strong>x{{ orden.papasCombo }}</strong>
+                </div>
+
                 <div *ngIf="orden.gaseosa250 > 0" class="producto-item">
                     <span>🥤 Gaseosa 250ml</span>
                     <strong>x{{ orden.gaseosa250 }}</strong>
@@ -62,6 +67,11 @@
                 <div *ngIf="orden.gaseosa500 > 0" class="producto-item">
                     <span>🥤 Gaseosa 500ml</span>
                     <strong>x{{ orden.gaseosa500 }}</strong>
+                </div>
+
+                <div *ngIf="orden.agua > 0" class="producto-item">
+                    <span>🥤 Agua</span>
+                    <strong>x{{ orden.agua }}</strong>
                 </div>
                 <p class="total">
                     Total: ${{ orden.total?.toLocaleString('es-CO') }}

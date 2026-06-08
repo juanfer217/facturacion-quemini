@@ -57,6 +57,11 @@
                     <strong>x{{ venta.papasGrandes }}</strong>
                 </div>
 
+                <div *ngIf="venta.papasCombo > 0" class="detalle-item">
+                    <span>🍟 Papas Combo</span>
+                    <strong>x{{ venta.papasCombo }}</strong>
+                </div>
+
                 <div *ngIf="venta.gaseosa250 > 0" class="detalle-item">
                     <span>🥤 Gaseosa 250 ml</span>
                     <strong>x{{ venta.gaseosa250 }}</strong>
@@ -65,6 +70,11 @@
                 <div *ngIf="venta.gaseosa500 > 0" class="detalle-item">
                     <span>🥤 Gaseosa 500 ml</span>
                     <strong>x{{ venta.gaseosa500 }}</strong>
+                </div>
+
+                <div *ngIf="venta.agua > 0" class="detalle-item">
+                    <span>🥤 Agua</span>
+                    <strong>x{{ venta.agua }}</strong>
                 </div>
 
             </div>

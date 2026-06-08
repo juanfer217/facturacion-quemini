@@ -8,8 +8,10 @@ export interface Orden {
   miniArepas: number;
   papasPequenas: number;
   papasGrandes: number;
+  papasCombo: number;
   gaseosa250: number;
   gaseosa500: number;
+  agua: number;
   total: number;
   fecha: Date;
   estado: 'activa' | 'entregada';
