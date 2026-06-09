@@ -17,6 +17,16 @@
                 <span>🫓</span>
                 <p> {{ totalArepas }}</p>
             </div>
+
+            <div class="contador">
+                <span>🍟</span>
+                <p> {{ totalPapasGrandes }}</p>
+            </div>
+
+            <div class="contador">
+                <span>🥔</span>
+                <p> {{ totalPapasPequenas }}</p>
+            </div>
         </div>
     </div>
 
@@ -65,7 +75,7 @@
                 </div>
 
                 <div *ngIf="orden.papasPequenas > 0" class="producto-item">
-                    <span>🍟 Papas Pequeñas</span>
+                    <span>🥔 Papas Pequeñas</span>
                     <strong>x{{ orden.papasPequenas }}</strong>
                 </div>
 
