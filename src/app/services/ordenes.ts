@@ -147,7 +147,7 @@ export class OrdenesService {
     localStorage.removeItem('contadorOrdenes');
 
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('Historial');
+      localStorage.removeItem('historial');
     }
   }
 
