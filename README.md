@@ -1,59 +1,68 @@
-# QueMini
+### 🍔 QueMini
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.0.
+Sistema de gestión de pedidos y ventas para restaurantes desarrollado con Angular.
+---
+### 📋 Descripción
 
-## Development server
+QueMini es una aplicación diseñada para facilitar la administración de pedidos en restaurantes de comida rápida. Permite registrar órdenes, calcular totales automáticamente, gestionar el historial de ventas y generar reportes del día.
+---
+### ✨ Características
 
-To start a local development server, run:
+• Crear nuevos pedidos.
+• Editar pedidos existentes.
+• Eliminar pedidos.
+• Cálculo automático de subtotales y total de la orden.
+• Historial de ventas del día.
+• Resumen de ingresos diarios.
+• Almacenamiento local mediante LocalStorage.
+• Interfaz responsiva y fácil de usar.
+---
+### 🛠️ Tecnologías Utilizadas
 
-```bash
-ng serve
-```
+• Angular
+• TypeScript
+• HTML5
+• CSS3
+• LocalStorage
+---
+### 🚀 Instalación
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+1. Clonar el repositorio:
 
-## Code scaffolding
+- git clone https://github.com/tu-usuario/quemini.git
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+2. Entrar al proyecto:
 
-```bash
-ng generate component component-name
-```
+- cd quemini
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+3. Instalar dependencias:
 
-```bash
-ng generate --help
-```
+- npm install
 
-## Building
+4. Ejecutar la aplicación:
 
-To build the project run:
+- ng serve
 
-```bash
-ng build
-```
+5. Abrir en el navegador:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- http://localhost:4200
+---
+### 📸 Capturas
 
-## Running unit tests
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+---
+### 🎯 Funcionalidades Futuras
 
-```bash
-ng test
-```
+• Generación de facturas en PDF.
+• Gestión de clientes.
+• Reportes avanzados.
+---
+### 👨‍💻 Autor
 
-## Running end-to-end tests
+Juan Fernando Jaramillo Díaz
 
-For end-to-end (e2e) testing, run:
+Estudiante de Ingeniería de Sistemas apasionado por el desarrollo web y la creación de soluciones tecnológicas para negocios.
+---
+## 📄 Licencia
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este proyecto se distribuye bajo la licencia MI
