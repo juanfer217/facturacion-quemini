@@ -30,6 +30,27 @@ export class Ordenes {
 
     this.router.navigate(['/']);
   }
+  
+  get totalHamburguesas(): number {
+    return this.ordenes.reduce(
+      (total, orden) => total + orden.miniHamburguesas,
+      0
+    );
+  }
+
+  get totalPerros(): number {
+    return this.ordenes.reduce(
+      (total, orden) => total + orden.miniPerros,
+      0
+    );
+  }
+
+  get totalArepas(): number {
+    return this.ordenes.reduce(
+      (total, orden) => total + orden.miniArepas,
+      0
+    );
+  }
 
   eliminarOrden(id: number) {
 
@@ -75,5 +96,5 @@ export class Ordenes {
     }
 
   }
-  
+
 }

@@ -11,10 +11,8 @@ body {
     min-height: 100vh;
     padding: 80px 15px 40px 15px;
     background:
-        linear-gradient(
-            rgba(45,45,45,.94),
-            rgba(45,45,45,.94)
-        ),
+        linear-gradient(rgba(45, 45, 45, .94),
+            rgba(45, 45, 45, .94)),
         url('/img/logo.png');
 
     background-size: cover;
@@ -23,7 +21,29 @@ body {
 }
 
 .header-ordenes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 30px;
+}
+
+.totales {
+    display: flex;
+    gap: 15px;
+}
+
+.contador p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(255, 208, 0, .2);
+    color: white;
+    font-weight: bold;
+    margin-top: 3px;
 }
 
 .header-ordenes h1 {
@@ -32,6 +52,7 @@ body {
     margin-bottom: 5px;
     text-align: center;
 }
+
 
 .header-ordenes p {
     color: #d1d1d1;
@@ -43,8 +64,8 @@ body {
     padding: 40px;
     text-align: center;
     border-radius: 20px;
-    background: rgba(255,255,255,.05);
-    border: 1px solid rgba(255,208,0,.2);
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(255, 208, 0, .2);
     color: white;
 }
 
@@ -60,10 +81,10 @@ body {
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 20px;
-    border: 1px solid rgba(255,208,0,.3);
+    border: 1px solid rgba(255, 208, 0, .3);
     box-shadow:
-        0 10px 30px rgba(0,0,0,.3),
-        0 0 15px rgba(255,208,0,.15);
+        0 10px 30px rgba(0, 0, 0, .3),
+        0 0 15px rgba(255, 208, 0, .15);
 
     transition: .25s;
 }
@@ -89,10 +110,10 @@ body {
 .estado {
     display: inline-block;
     margin-top: 8px;
-    padding: 6px 12px;
+    padding: 4px 10px;
     border-radius: 999px;
-    background: rgba(255,208,0,.15);
-    border: 1px solid rgba(255,208,0,.3);
+    background: rgba(255, 208, 0, .15);
+    border: 1px solid rgba(255, 208, 0, .3);
     color: #ffd000;
     font-size: .8rem;
     font-weight: bold;
@@ -102,6 +123,8 @@ body {
     color: #ffd000;
     font-weight: bold;
     font-size: .9rem;
+    padding-bottom: 15px;
+    padding-left: 4px;
 }
 
 .productos-lista {
@@ -116,7 +139,7 @@ body {
     align-items: center;
     padding: 12px;
     border-radius: 12px;
-    background: rgba(255,255,255,.05);
+    background: rgba(255, 255, 255, .05);
     color: white;
 }
 
@@ -189,7 +212,7 @@ body {
     border: none;
     border-radius: 50%;
 
-    background: rgba(220,38,38,.15);
+    background: rgba(220, 38, 38, .15);
     color: #ef4444;
 
     font-size: 18px;

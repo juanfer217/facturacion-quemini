@@ -2,6 +2,22 @@
 
     <div class="header-ordenes">
         <h1>ORDENES ACTIVAS</h1>
+        <div class="totales">
+            <div class="contador">
+                <span>🍔</span>
+                <p> {{ totalHamburguesas }}</p>
+            </div>
+
+            <div class="contador">
+                <span>🌭</span>
+                <p> {{ totalPerros }}</p>
+            </div>
+
+            <div class="contador">
+                <span>🫓</span>
+                <p> {{ totalArepas }}</p>
+            </div>
+        </div>
     </div>
 
     <div *ngIf="ordenes.length === 0" class="sin-ordenes">
