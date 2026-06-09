@@ -4,8 +4,9 @@ Sistema de gestión de pedidos y ventas para restaurantes desarrollado con Angul
 ---
 ### 📋 Descripción
 
-<p>QueMini es una aplicación diseñada para facilitar la administración de pedidos en restaurantes de comida rápida. Permite registrar órdenes, calcular totales automáticamente, gestionar el historial de ventas y generar reportes del día.</p>
+QueMini es una aplicación diseñada para facilitar la administración de pedidos en restaurantes de comida rápida. Permite registrar órdenes, calcular totales automáticamente, gestionar el historial de ventas y generar reportes del día.
 ---
+
 ### ✨ Características
 
 - Crear nuevos pedidos.
@@ -17,6 +18,7 @@ Sistema de gestión de pedidos y ventas para restaurantes desarrollado con Angul
 - Almacenamiento local mediante LocalStorage.
 - Interfaz responsiva y fácil de usar.
 ---
+
 ### 🛠️ Tecnologías Utilizadas
 
 - Angular
@@ -25,6 +27,7 @@ Sistema de gestión de pedidos y ventas para restaurantes desarrollado con Angul
 - CSS3
 - LocalStorage
 ---
+
 ### 🚀 Instalación
 
 1. Clonar el repositorio:
@@ -61,8 +64,9 @@ Sistema de gestión de pedidos y ventas para restaurantes desarrollado con Angul
 
 Juan Fernando Jaramillo Díaz
 
-<p>Estudiante de Ingeniería de Sistemas apasionado por el desarrollo web y la creación de soluciones tecnológicas para negocios.</p>
+Estudiante de Ingeniería de Sistemas apasionado por el desarrollo web y la creación de soluciones tecnológicas para negocios.
 ---
+
 ## 📄 Licencia
 
 Este proyecto se distribuye bajo la licencia MI
